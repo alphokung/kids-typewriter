@@ -44,31 +44,47 @@ fetch('words.json')
 function init() {
 
 // --- Speech Engine ---
-// Cache voices as soon as they are available (Chrome loads them async).
+
+// Preload voices; Chrome fires onvoiceschanged once they are ready.
 let cachedVoices = [];
 const loadVoices = () => { cachedVoices = window.speechSynthesis.getVoices(); };
 loadVoices();
 window.speechSynthesis.onvoiceschanged = loadVoices;
 
-// Resume synthesis when tab regains focus (Chrome pauses it on tab switch).
+// Chrome bug #1 — synthesis silently stops after ~15 s of inactivity.
+// Keepalive: tickle pause/resume every 10 s so Chrome never hits the timeout.
+setInterval(() => {
+  if (window.speechSynthesis.speaking) return; // don't interrupt live speech
+  window.speechSynthesis.pause();
+  window.speechSynthesis.resume();
+}, 10000);
+
+// Chrome bug #2 — synthesis pauses when the tab loses focus.
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) window.speechSynthesis.resume();
 });
 
 function speak(text) {
+  // Chrome bug #3 — cancel() leaves synthesis in "paused" state, not "idle".
+  // Calling resume() immediately after unlocks it so the next speak() fires.
   window.speechSynthesis.cancel();
+  window.speechSynthesis.resume();
+
   setTimeout(() => {
     const u = new SpeechSynthesisUtterance(text);
-    u.lang  = 'en-US';
-    u.rate  = 0.85;
+    u.lang   = 'en-US';
+    u.rate   = 0.85;
     u.volume = 1;
-    // Prefer Google US English in Chrome; fall back gracefully.
-    const voice = cachedVoices.find(v => v.name === 'Google US English')
-               || cachedVoices.find(v => v.lang === 'en-US')
-               || cachedVoices.find(v => v.lang.startsWith('en'));
+
+    // Always fetch fresh — stale cache may be empty on first call.
+    const voices = window.speechSynthesis.getVoices();
+    const voice  = voices.find(v => v.name === 'Google US English')
+                || voices.find(v => v.lang === 'en-US')
+                || voices.find(v => v.lang.startsWith('en'));
     if (voice) u.voice = voice;
+
     window.speechSynthesis.speak(u);
-  }, 150);
+  }, 50);
 }
 
 // --- Level Selection ---
