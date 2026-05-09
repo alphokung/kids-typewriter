@@ -95,6 +95,32 @@ body {
   100% { transform: rotate(0deg); }
 }
 
+/* Congrats text bounce-in */
+.congrats-pop {
+  animation: congrats-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes congrats-pop {
+  0%   { transform: scale(0) rotate(-8deg); opacity: 0; }
+  60%  { transform: scale(1.25) rotate(4deg); opacity: 1; }
+  80%  { transform: scale(0.95) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Emoji celebrate bounce */
+.emoji-celebrate {
+  animation: emoji-celebrate 0.8s ease-in-out;
+}
+
+@keyframes emoji-celebrate {
+  0%   { transform: scale(1)    rotate(0deg);   }
+  20%  { transform: scale(1.45) rotate(-15deg); }
+  40%  { transform: scale(1.45) rotate(15deg);  }
+  60%  { transform: scale(1.25) rotate(-8deg);  }
+  80%  { transform: scale(1.25) rotate(8deg);   }
+  100% { transform: scale(1)    rotate(0deg);   }
+}
+
 /* Mobile Adjustments when keyboard is active */
 .keyboard-active #game-container {
   transform: scale(0.85);

@@ -43,6 +43,34 @@ fetch('words.json')
 
 function init() {
 
+// --- Speech Engine ---
+// Cache voices as soon as they are available (Chrome loads them async).
+let cachedVoices = [];
+const loadVoices = () => { cachedVoices = window.speechSynthesis.getVoices(); };
+loadVoices();
+window.speechSynthesis.onvoiceschanged = loadVoices;
+
+// Resume synthesis when tab regains focus (Chrome pauses it on tab switch).
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) window.speechSynthesis.resume();
+});
+
+function speak(text) {
+  window.speechSynthesis.cancel();
+  setTimeout(() => {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang  = 'en-US';
+    u.rate  = 0.85;
+    u.volume = 1;
+    // Prefer Google US English in Chrome; fall back gracefully.
+    const voice = cachedVoices.find(v => v.name === 'Google US English')
+               || cachedVoices.find(v => v.lang === 'en-US')
+               || cachedVoices.find(v => v.lang.startsWith('en'));
+    if (voice) u.voice = voice;
+    window.speechSynthesis.speak(u);
+  }, 150);
+}
+
 // --- Level Selection ---
 document.querySelectorAll('.level-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -72,38 +100,14 @@ function getNextWord() {
   return wordPool.pop();
 }
 
-// Voices load asynchronously — wait for them before speaking.
-function getVoices() {
-  return new Promise(resolve => {
-    const voices = window.speechSynthesis.getVoices();
-    if (voices.length > 0) { resolve(voices); return; }
-    window.speechSynthesis.onvoiceschanged = () => resolve(window.speechSynthesis.getVoices());
-  });
-}
-
-function speak(text) {
-  getVoices().then(voices => {
-    window.speechSynthesis.cancel();
-    // Small delay after cancel — skipping it causes Chrome/Safari to silently drop the utterance.
-    setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.85;
-      const enVoice = voices.find(v => v.lang.startsWith('en'));
-      if (enVoice) utterance.voice = enVoice;
-      window.speechSynthesis.speak(utterance);
-    }, 50);
-  });
-}
-
 function loadNextWord() {
   currentWordObj = getNextWord();
   typedIndex = 0;
 
   emojiDisplay.textContent = currentWordObj.emoji;
   emojiDisplay.classList.remove('jiggle');
-  congratsText.classList.remove('opacity-100', 'scale-100', 'jiggle');
-  congratsText.classList.add('opacity-0', 'scale-50');
+  congratsText.classList.remove('congrats-pop');
+  congratsText.classList.add('opacity-0');
 
   wordDisplay.innerHTML = '';
   hintDots.innerHTML = '';
@@ -121,7 +125,7 @@ function loadNextWord() {
     hintDots.appendChild(dot);
   }
 
-  setTimeout(() => speak(currentWordObj.word), 300);
+  speak(currentWordObj.word);
 }
 
 // Tap emoji to replay pronunciation
@@ -137,6 +141,8 @@ function handleInput(char) {
   const targetChar = currentWordObj.word[typedIndex].toLowerCase();
 
   if (char.toLowerCase() === targetChar) {
+    speak(targetChar);
+
     const letters = wordDisplay.querySelectorAll('.letter');
     const dots    = hintDots.querySelectorAll('.hint-dot');
 
@@ -159,23 +165,32 @@ function finishWord() {
   score++;
   scoreDisplay.textContent = score;
 
+  // Letters rainbow
   const letters = wordDisplay.querySelectorAll('.letter');
   letters.forEach(l => l.classList.add('rainbow-text', 'jiggle'));
-  emojiDisplay.classList.add('jiggle');
 
+  // Emoji celebrate
+  emojiDisplay.classList.remove('emoji-celebrate');
+  void emojiDisplay.offsetWidth; // reflow to restart animation
+  emojiDisplay.classList.add('emoji-celebrate');
+
+  // Congrats text pop
   const phrase = congratsPhrases[Math.floor(Math.random() * congratsPhrases.length)];
   congratsText.textContent = phrase;
-  congratsText.classList.remove('opacity-0', 'scale-50');
-  congratsText.classList.add('opacity-100', 'scale-100', 'jiggle');
+  congratsText.classList.remove('opacity-0', 'scale-50', 'congrats-pop');
+  void congratsText.offsetWidth; // reflow to restart animation
+  congratsText.classList.add('congrats-pop');
 
-  confetti({
-    particleCount: 150,
-    spread: 80,
-    origin: { y: 0.6 },
-    colors: ['#a1c4fd', '#ff9a9e', '#fef9e7']
-  });
+  // Wait for last character to finish (~500 ms) then add 200 ms gap before congrats phrase.
+  setTimeout(() => speak(phrase), 700);
 
-  setTimeout(() => loadNextWord(), 3000);
+  // Staggered confetti bursts
+  const colors = ['#a1c4fd', '#ff9a9e', '#fef9e7', '#fcd34d', '#86efac'];
+  confetti({ particleCount: 120, spread: 70, origin: { x: 0.5, y: 0.6 }, colors });
+  setTimeout(() => confetti({ particleCount: 80, spread: 100, origin: { x: 0.2, y: 0.5 }, colors }), 300);
+  setTimeout(() => confetti({ particleCount: 80, spread: 100, origin: { x: 0.8, y: 0.5 }, colors }), 500);
+
+  setTimeout(() => loadNextWord(), 3500);
 }
 
 // --- Input Listeners ---
@@ -190,10 +205,10 @@ hiddenInput.addEventListener('input', (e) => {
 gameContainer.addEventListener('touchstart', () => hiddenInput.focus());
 gameContainer.addEventListener('click',      () => hiddenInput.focus());
 
+// Keep hidden input focused on keydown so the input event always fires.
 window.addEventListener('keydown', (e) => {
-  if (e.ctrlKey || e.altKey || e.metaKey || startScreen.style.display !== 'none') return;
+  if (e.ctrlKey || e.altKey || e.metaKey) return;
   if (e.key.length === 1 && e.key.match(/[a-z]/i)) {
-    handleInput(e.key);
     hiddenInput.focus();
   }
 });
