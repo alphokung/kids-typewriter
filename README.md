@@ -1,6 +1,6 @@
-# 🦁 Animal Alpha-Type
+# 🦁 Typewriter for Kids
 
-An interactive spelling game for young children (ages 3–7). Kids pick a difficulty level, hear the animal's name pronounced, then type each letter to spell it out — earning confetti and praise when they finish.
+A free interactive typing game for young children (ages 3–7). Kids pick a difficulty level, hear the animal's name pronounced, then type each letter to spell it out — earning confetti and praise when they finish.
 
 No install required. Runs entirely in the browser.
 
