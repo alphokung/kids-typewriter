@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Typewriter for Kids 🦁</title>
 
   <!-- Favicon (emoji) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦁</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦁</text></svg>">
 
   <!-- Primary meta -->
-  <meta name="description" content="A free typing game for kids! Spell animal names, hear each letter, and earn confetti rewards. 5 difficulty levels for ages 3–7.">
+  <meta name="description"
+    content="A free typing game for kids! Spell animal names, hear each letter, and earn confetti rewards. 5 difficulty levels for ages 3–7.">
 
   <!-- Open Graph -->
-  <meta property="og:type"         content="website">
-  <meta property="og:title"        content="Typewriter for Kids 🦁">
-  <meta property="og:description"  content="A free typing game for kids! Spell animal names, hear each letter, and earn confetti rewards. 5 difficulty levels for ages 3–7.">
-  <meta property="og:image"        content="https://alphokung.github.io/kids-typewriter/og-image.png">
-  <meta property="og:image:width"  content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url"          content="https://alphokung.github.io/kids-typewriter/">
-  <meta property="og:locale"       content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Typewriter for Kids 🦁">
+  <meta property="og:description"
+    content="A free typing game for kids! Spell animal names, hear each letter, and earn confetti rewards. 5 difficulty levels for ages 3–7.">
+  <meta property="og:image" content="https://alphokung.github.io/kids-typewriter/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="634">
+  <meta property="og:url" content="https://alphokung.github.io/kids-typewriter/">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Typewriter for Kids 🦁">
-  <meta name="twitter:description" content="A free typing game for kids! Spell animal names, hear each letter, and earn confetti rewards. 5 difficulty levels for ages 3–7.">
-  <meta name="twitter:image"       content="https://alphokung.github.io/kids-typewriter/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Typewriter for Kids 🦁">
+  <meta name="twitter:description"
+    content="A free typing game for kids! Spell animal names, hear each letter, and earn confetti rewards. 5 difficulty levels for ages 3–7.">
+  <meta name="twitter:image" content="https://alphokung.github.io/kids-typewriter/og-image.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,16 +46,22 @@
   <!-- Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-<body class="bg-[#f0f9ff] text-gray-800 font-quicksand overflow-hidden h-screen flex flex-col items-center justify-start sm:justify-center relative">
+
+<body
+  class="bg-[#f0f9ff] text-gray-800 font-quicksand overflow-hidden h-screen flex flex-col items-center justify-start sm:justify-center relative">
 
   <!-- Start Screen -->
-  <div id="start-screen" class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#f0f9ff] transition-opacity duration-500 px-4">
+  <div id="start-screen"
+    class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#f0f9ff] transition-opacity duration-500 px-4">
     <h1 class="text-4xl md:text-6xl font-bold text-center mb-2 text-[#ff9a9e]">Typewriter for Kids</h1>
-    <p class="text-lg md:text-xl text-center mb-8 text-gray-500">Spell animals, earn stars! Choose a level to start 🌟</p>
+    <p class="text-lg md:text-xl text-center mb-8 text-gray-500">Spell animals, earn stars! Choose a level to start 🌟
+    </p>
 
     <div class="flex flex-col gap-3 w-full max-w-sm">
 
-      <button class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-green-100 hover:bg-green-200 text-green-800 transition-colors shadow active:scale-95" data-level="1">
+      <button
+        class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-green-100 hover:bg-green-200 text-green-800 transition-colors shadow active:scale-95"
+        data-level="1">
         <span class="text-2xl">⭐</span>
         <span class="flex flex-col items-start">
           <span class="font-bold text-lg leading-tight">Level 1</span>
@@ -58,7 +69,9 @@
         </span>
       </button>
 
-      <button class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 transition-colors shadow active:scale-95" data-level="2">
+      <button
+        class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 transition-colors shadow active:scale-95"
+        data-level="2">
         <span class="text-2xl">⭐⭐</span>
         <span class="flex flex-col items-start">
           <span class="font-bold text-lg leading-tight">Level 2</span>
@@ -66,7 +79,9 @@
         </span>
       </button>
 
-      <button class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-orange-100 hover:bg-orange-200 text-orange-800 transition-colors shadow active:scale-95" data-level="3">
+      <button
+        class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-orange-100 hover:bg-orange-200 text-orange-800 transition-colors shadow active:scale-95"
+        data-level="3">
         <span class="text-2xl">⭐⭐⭐</span>
         <span class="flex flex-col items-start">
           <span class="font-bold text-lg leading-tight">Level 3</span>
@@ -74,7 +89,9 @@
         </span>
       </button>
 
-      <button class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-pink-100 hover:bg-pink-200 text-pink-800 transition-colors shadow active:scale-95" data-level="4">
+      <button
+        class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-pink-100 hover:bg-pink-200 text-pink-800 transition-colors shadow active:scale-95"
+        data-level="4">
         <span class="text-2xl">⭐⭐⭐⭐</span>
         <span class="flex flex-col items-start">
           <span class="font-bold text-lg leading-tight">Level 4</span>
@@ -82,7 +99,9 @@
         </span>
       </button>
 
-      <button class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-purple-100 hover:bg-purple-200 text-purple-800 transition-colors shadow active:scale-95" data-level="5">
+      <button
+        class="level-btn bubbly-button flex items-center gap-4 px-6 py-4 bg-purple-100 hover:bg-purple-200 text-purple-800 transition-colors shadow active:scale-95"
+        data-level="5">
         <span class="text-2xl">⭐⭐⭐⭐⭐</span>
         <span class="flex flex-col items-start">
           <span class="font-bold text-lg leading-tight">Level 5</span>
@@ -93,15 +112,18 @@
     </div>
 
     <!-- Chrome voice hint -->
-    <div class="mt-6 w-full max-w-sm bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3 text-xs text-blue-600 text-center leading-relaxed">
+    <div
+      class="mt-6 w-full max-w-sm bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3 text-xs text-blue-600 text-center leading-relaxed">
       🔊 <strong>Using Chrome and can't hear the voice?</strong><br>
-      Type <code class="bg-blue-100 px-1 py-0.5 rounded font-mono select-all">chrome://restart</code> in the address bar and press Enter to restart Chrome.
+      Type <code class="bg-blue-100 px-1 py-0.5 rounded font-mono select-all">chrome://restart</code> in the address bar
+      and press Enter to restart Chrome.
     </div>
 
   </div>
 
   <!-- Main Game Container -->
-  <div id="game-container" class="w-full max-w-3xl flex flex-col items-center justify-center p-4 mt-8 sm:mt-0 opacity-0 transition-opacity duration-500 pointer-events-none">
+  <div id="game-container"
+    class="w-full max-w-3xl flex flex-col items-center justify-center p-4 mt-8 sm:mt-0 opacity-0 transition-opacity duration-500 pointer-events-none">
 
     <!-- Score Display -->
     <div class="absolute top-4 right-6 text-xl font-bold text-[#a1c4fd]">
@@ -114,7 +136,8 @@
     </div>
 
     <!-- Congratulation Text -->
-    <div id="congrats-text" class="text-3xl md:text-5xl font-bold text-[#ff9a9e] h-12 md:h-16 mb-2 opacity-0 transition-all duration-500 transform scale-50">
+    <div id="congrats-text"
+      class="text-3xl md:text-5xl font-bold text-[#ff9a9e] h-12 md:h-16 mb-2 opacity-0 transition-all duration-500 transform scale-50">
     </div>
 
     <!-- Animal Emoji -->
@@ -126,7 +149,8 @@
     <div class="word-card w-full bg-white shadow-xl flex flex-col items-center justify-center p-8 md:p-12 mb-6">
 
       <!-- Word Container -->
-      <div id="word-display" class="flex gap-2 md:gap-4 flex-wrap justify-center font-bold text-4xl md:text-6xl tracking-widest uppercase">
+      <div id="word-display"
+        class="flex gap-2 md:gap-4 flex-wrap justify-center font-bold text-4xl md:text-6xl tracking-widest uppercase">
         <!-- Letters injected here via JS -->
       </div>
 
@@ -140,9 +164,11 @@
   </div>
 
   <!-- Hidden Input for Mobile Keyboard -->
-  <input type="text" id="hidden-input" class="opacity-0 absolute -z-10 pointer-events-none" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+  <input type="text" id="hidden-input" class="opacity-0 absolute -z-10 pointer-events-none" autocomplete="off"
+    autocorrect="off" autocapitalize="off" spellcheck="false" />
 
   <!-- App Script -->
   <script src="app.js"></script>
 </body>
+
 </html>
