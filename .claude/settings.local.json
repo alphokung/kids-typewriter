@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npx serve *)",
+      "Bash(echo \"PID: $!\")",
+      "Read(//tmp/**)",
+      "Bash(sleep 2 && cat /tmp/serve.log)",
+      "Bash(npx serve -l 4321 &> /tmp/serve.log & *)",
+      "mcp__Claude_in_Chrome__tabs_create_mcp",
+      "Bash(gh pr *)",
+      "Bash(git fetch *)"
+    ]
+  }
+}
