@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-sky-blue: #a1c4fd;
+  --color-pink: #ff9a9e;
+  --color-cream: #fef9e7;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  /* Prevent bounce effect on mobile Safari */
+  overscroll-behavior: none;
+}
+
+/* Bubbly UI Elements */
+.bubbly-button {
+  border-radius: 60px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.word-card {
+  border-radius: 60px;
+}
+
+/* Letter States */
+.letter {
+  transition: all 0.3s ease;
+  color: #d1d5db; /* gray-300 - untouched state */
+  border-bottom: 4px solid transparent;
+}
+
+.letter.typed {
+  color: #9ca3af; /* gray-400 - typed/faded state */
+  transform: scale(0.95);
+}
+
+.letter.current {
+  color: var(--color-sky-blue);
+  border-bottom: 4px solid var(--color-sky-blue);
+  animation: pulse-border 1.5s infinite;
+  transform: scale(1.1);
+}
+
+/* Hint Dots */
+.hint-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #e5e7eb; /* gray-200 */
+  transition: background-color 0.3s;
+}
+
+.hint-dot.active {
+  background-color: var(--color-sky-blue);
+}
+
+/* Animations */
+@keyframes pulse-border {
+  0% {
+    border-color: rgba(161, 196, 253, 0.4);
+  }
+  50% {
+    border-color: rgba(161, 196, 253, 1);
+  }
+  100% {
+    border-color: rgba(161, 196, 253, 0.4);
+  }
+}
+
+.rainbow-text {
+  animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: #ff9a9e; }
+  25% { color: #fecfef; }
+  50% { color: #a1c4fd; }
+  75% { color: #c2e9fb; }
+  100% { color: #ff9a9e; }
+}
+
+.jiggle {
+  animation: jiggle-anim 0.4s ease-in-out;
+}
+
+@keyframes jiggle-anim {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Mobile Adjustments when keyboard is active */
+.keyboard-active #game-container {
+  transform: scale(0.85);
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+}
+
+.keyboard-active #emoji-display {
+  margin-bottom: 1rem;
+}
+
+.keyboard-active .word-card {
+  padding: 1.5rem;
+}
