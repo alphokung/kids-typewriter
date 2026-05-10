@@ -1,0 +1,16 @@
+{
+  "name": "type-writer",
+  "version": "1.0.0",
+  "description": "A free interactive typing game for young children (ages 3–7). Kids pick a difficulty level, hear the animal's name pronounced, then type each letter to spell it out — earning confetti and praise when they finish.",
+  "main": "app.js",
+  "scripts": {
+    "build:css": "tailwindcss -i styles.css -o styles.build.css --minify",
+    "watch:css": "tailwindcss -i styles.css -o styles.build.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
