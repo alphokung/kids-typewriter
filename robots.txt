@@ -1,6 +1,2 @@
 User-agent: *
 Allow: /
-
-# Explicitly allow Facebook crawler for Open Graph scraping
-User-agent: facebookexternalhit
-Allow: /
