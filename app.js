@@ -21,7 +21,7 @@ const levelMeta = [
 let wordPool = [];
 let currentWordObj = null;
 let typedIndex = 0;
-let score = 0;
+let score = parseInt(sessionStorage.getItem('score') || '0', 10);
 let selectedLevel = 1;
 
 // --- DOM Elements ---
@@ -137,9 +137,8 @@ function init() {
     wordPool = masterWordList
       .filter(w => w.level === level)
       .sort(() => Math.random() - 0.5);
-    score = 0;
-    scoreDisplay.textContent = 0;
     levelBadge.textContent = levelMeta[level - 1].label;
+    scoreDisplay.textContent = score;
   }
 
   function triggerLevelComplete() {
@@ -179,8 +178,12 @@ function init() {
   document.querySelectorAll('.level-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const level = parseInt(btn.dataset.level, 10);
+      // Reset score for a fresh game
+      score = 0;
+      sessionStorage.setItem('score', '0');
       startLevel(level);
 
+      scoreDisplay.textContent = score;
       startScreen.classList.add('opacity-0');
       setTimeout(() => {
         startScreen.style.display = 'none';
@@ -276,6 +279,7 @@ function init() {
   function finishWord() {
     score++;
     scoreDisplay.textContent = score;
+    sessionStorage.setItem('score', String(score));
 
     // Letters rainbow
     const letters = wordDisplay.querySelectorAll('.letter');
