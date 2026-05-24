@@ -1,407 +1,208 @@
 [
-  {
-    "word": "cat",
-    "emoji": "🐱",
-    "level": 1
-  },
-  {
-    "word": "dog",
-    "emoji": "🐶",
-    "level": 1
-  },
-  {
-    "word": "fox",
-    "emoji": "🦊",
-    "level": 1
-  },
-  {
-    "word": "pig",
-    "emoji": "🐷",
-    "level": 1
-  },
-  {
-    "word": "cow",
-    "emoji": "🐮",
-    "level": 1
-  },
-  {
-    "word": "owl",
-    "emoji": "🦉",
-    "level": 1
-  },
-  {
-    "word": "bee",
-    "emoji": "🐝",
-    "level": 1
-  },
-  {
-    "word": "bat",
-    "emoji": "🦇",
-    "level": 1
-  },
-  {
-    "word": "ant",
-    "emoji": "🐜",
-    "level": 1
-  },
-  {
-    "word": "fly",
-    "emoji": "🪰",
-    "level": 1
-  },
-  {
-    "word": "rat",
-    "emoji": "🐀",
-    "level": 1
-  },
-  {
-    "word": "bug",
-    "emoji": "🐛",
-    "level": 1
-  },
-  {
-    "word": "bear",
-    "emoji": "🐻",
-    "level": 2
-  },
-  {
-    "word": "frog",
-    "emoji": "🐸",
-    "level": 2
-  },
-  {
-    "word": "duck",
-    "emoji": "🦆",
-    "level": 2
-  },
-  {
-    "word": "lion",
-    "emoji": "🦁",
-    "level": 2
-  },
-  {
-    "word": "wolf",
-    "emoji": "🐺",
-    "level": 2
-  },
-  {
-    "word": "crab",
-    "emoji": "🦀",
-    "level": 2
-  },
-  {
-    "word": "fish",
-    "emoji": "🐟",
-    "level": 2
-  },
-  {
-    "word": "deer",
-    "emoji": "🦌",
-    "level": 2
-  },
-  {
-    "word": "swan",
-    "emoji": "🦢",
-    "level": 2
-  },
-  {
-    "word": "goat",
-    "emoji": "🐐",
-    "level": 2
-  },
-  {
-    "word": "seal",
-    "emoji": "🦭",
-    "level": 2
-  },
-  {
-    "word": "bull",
-    "emoji": "🐂",
-    "level": 2
-  },
-  {
-    "word": "dove",
-    "emoji": "🕊️",
-    "level": 2
-  },
-  {
-    "word": "tiger",
-    "emoji": "🐯",
-    "level": 3
-  },
-  {
-    "word": "horse",
-    "emoji": "🐴",
-    "level": 3
-  },
-  {
-    "word": "sheep",
-    "emoji": "🐑",
-    "level": 3
-  },
-  {
-    "word": "koala",
-    "emoji": "🐨",
-    "level": 3
-  },
-  {
-    "word": "panda",
-    "emoji": "🐼",
-    "level": 3
-  },
-  {
-    "word": "whale",
-    "emoji": "🐳",
-    "level": 3
-  },
-  {
-    "word": "shark",
-    "emoji": "🦈",
-    "level": 3
-  },
-  {
-    "word": "mouse",
-    "emoji": "🐭",
-    "level": 3
-  },
-  {
-    "word": "snake",
-    "emoji": "🐍",
-    "level": 3
-  },
-  {
-    "word": "zebra",
-    "emoji": "🦓",
-    "level": 3
-  },
-  {
-    "word": "eagle",
-    "emoji": "🦅",
-    "level": 3
-  },
-  {
-    "word": "rhino",
-    "emoji": "🦏",
-    "level": 3
-  },
-  {
-    "word": "hippo",
-    "emoji": "🦛",
-    "level": 3
-  },
-  {
-    "word": "camel",
-    "emoji": "🐪",
-    "level": 3
-  },
-  {
-    "word": "llama",
-    "emoji": "🦙",
-    "level": 3
-  },
-  {
-    "word": "sloth",
-    "emoji": "🦥",
-    "level": 3
-  },
-  {
-    "word": "otter",
-    "emoji": "🦦",
-    "level": 3
-  },
-  {
-    "word": "skunk",
-    "emoji": "🦨",
-    "level": 3
-  },
-  {
-    "word": "squid",
-    "emoji": "🦑",
-    "level": 3
-  },
-  {
-    "word": "snail",
-    "emoji": "🐌",
-    "level": 3
-  },
-  {
-    "word": "bison",
-    "emoji": "🦬",
-    "level": 3
-  },
-  {
-    "word": "moose",
-    "emoji": "🫎",
-    "level": 3
-  },
-  {
-    "word": "chick",
-    "emoji": "🐤",
-    "level": 3
-  },
-  {
-    "word": "rabbit",
-    "emoji": "🐰",
-    "level": 4
-  },
-  {
-    "word": "monkey",
-    "emoji": "🐵",
-    "level": 4
-  },
-  {
-    "word": "turtle",
-    "emoji": "🐢",
-    "level": 4
-  },
-  {
-    "word": "parrot",
-    "emoji": "🦜",
-    "level": 4
-  },
-  {
-    "word": "dragon",
-    "emoji": "🐉",
-    "level": 4
-  },
-  {
-    "word": "shrimp",
-    "emoji": "🦐",
-    "level": 4
-  },
-  {
-    "word": "beaver",
-    "emoji": "🦫",
-    "level": 4
-  },
-  {
-    "word": "spider",
-    "emoji": "🕷️",
-    "level": 4
-  },
-  {
-    "word": "chicken",
-    "emoji": "🐔",
-    "level": 4
-  },
-  {
-    "word": "octopus",
-    "emoji": "🐙",
-    "level": 4
-  },
-  {
-    "word": "giraffe",
-    "emoji": "🦒",
-    "level": 4
-  },
-  {
-    "word": "raccoon",
-    "emoji": "🦝",
-    "level": 4
-  },
-  {
-    "word": "gorilla",
-    "emoji": "🦍",
-    "level": 4
-  },
-  {
-    "word": "penguin",
-    "emoji": "🐧",
-    "level": 4
-  },
-  {
-    "word": "lobster",
-    "emoji": "🦞",
-    "level": 4
-  },
-  {
-    "word": "ladybug",
-    "emoji": "🐞",
-    "level": 4
-  },
-  {
-    "word": "dolphin",
-    "emoji": "🐬",
-    "level": 4
-  },
-  {
-    "word": "beetle",
-    "emoji": "🪲",
-    "level": 4
-  },
-  {
-    "word": "badger",
-    "emoji": "🦡",
-    "level": 4
-  },
-  {
-    "word": "lizard",
-    "emoji": "🦎",
-    "level": 4
-  },
-  {
-    "word": "turkey",
-    "emoji": "🦃",
-    "level": 4
-  },
-  {
-    "word": "poodle",
-    "emoji": "🐩",
-    "level": 4
-  },
-  {
-    "word": "elephant",
-    "emoji": "🐘",
-    "level": 5
-  },
-  {
-    "word": "kangaroo",
-    "emoji": "🦘",
-    "level": 5
-  },
-  {
-    "word": "flamingo",
-    "emoji": "🦩",
-    "level": 5
-  },
-  {
-    "word": "blowfish",
-    "emoji": "🐡",
-    "level": 5
-  },
-  {
-    "word": "scorpion",
-    "emoji": "🦂",
-    "level": 5
-  },
-  {
-    "word": "hedgehog",
-    "emoji": "🦔",
-    "level": 5
-  },
-  {
-    "word": "butterfly",
-    "emoji": "🦋",
-    "level": 5
-  },
-  {
-    "word": "dinosaur",
-    "emoji": "🦖",
-    "level": 5
-  },
-  {
-    "word": "mosquito",
-    "emoji": "🦟",
-    "level": 5
-  },
-  {
-    "word": "squirrel",
-    "emoji": "🐿️",
-    "level": 5
-  },
-  {
-    "word": "jellyfish",
-    "emoji": "🪼",
-    "level": 5
-  }
+  { "word": "cat",    "emoji": "🐱", "level": 1, "mode": "animal" },
+  { "word": "dog",    "emoji": "🐶", "level": 1, "mode": "animal" },
+  { "word": "fox",    "emoji": "🦊", "level": 1, "mode": "animal" },
+  { "word": "pig",    "emoji": "🐷", "level": 1, "mode": "animal" },
+  { "word": "cow",    "emoji": "🐮", "level": 1, "mode": "animal" },
+  { "word": "owl",    "emoji": "🦉", "level": 1, "mode": "animal" },
+  { "word": "bee",    "emoji": "🐝", "level": 1, "mode": "animal" },
+  { "word": "bat",    "emoji": "🦇", "level": 1, "mode": "animal" },
+  { "word": "ant",    "emoji": "🐜", "level": 1, "mode": "animal" },
+  { "word": "fly",    "emoji": "🪰", "level": 1, "mode": "animal" },
+  { "word": "rat",    "emoji": "🐀", "level": 1, "mode": "animal" },
+  { "word": "bug",    "emoji": "🐛", "level": 1, "mode": "animal" },
+
+  { "word": "bear",   "emoji": "🐻", "level": 2, "mode": "animal" },
+  { "word": "frog",   "emoji": "🐸", "level": 2, "mode": "animal" },
+  { "word": "duck",   "emoji": "🦆", "level": 2, "mode": "animal" },
+  { "word": "lion",   "emoji": "🦁", "level": 2, "mode": "animal" },
+  { "word": "wolf",   "emoji": "🐺", "level": 2, "mode": "animal" },
+  { "word": "crab",   "emoji": "🦀", "level": 2, "mode": "animal" },
+  { "word": "fish",   "emoji": "🐟", "level": 2, "mode": "animal" },
+  { "word": "deer",   "emoji": "🦌", "level": 2, "mode": "animal" },
+  { "word": "swan",   "emoji": "🦢", "level": 2, "mode": "animal" },
+  { "word": "goat",   "emoji": "🐐", "level": 2, "mode": "animal" },
+  { "word": "seal",   "emoji": "🦭", "level": 2, "mode": "animal" },
+  { "word": "bull",   "emoji": "🐂", "level": 2, "mode": "animal" },
+  { "word": "dove",   "emoji": "🕊️",  "level": 2, "mode": "animal" },
+
+  { "word": "tiger",  "emoji": "🐯", "level": 3, "mode": "animal" },
+  { "word": "horse",  "emoji": "🐴", "level": 3, "mode": "animal" },
+  { "word": "sheep",  "emoji": "🐑", "level": 3, "mode": "animal" },
+  { "word": "koala",  "emoji": "🐨", "level": 3, "mode": "animal" },
+  { "word": "panda",  "emoji": "🐼", "level": 3, "mode": "animal" },
+  { "word": "whale",  "emoji": "🐳", "level": 3, "mode": "animal" },
+  { "word": "shark",  "emoji": "🦈", "level": 3, "mode": "animal" },
+  { "word": "mouse",  "emoji": "🐭", "level": 3, "mode": "animal" },
+  { "word": "snake",  "emoji": "🐍", "level": 3, "mode": "animal" },
+  { "word": "zebra",  "emoji": "🦓", "level": 3, "mode": "animal" },
+  { "word": "eagle",  "emoji": "🦅", "level": 3, "mode": "animal" },
+  { "word": "rhino",  "emoji": "🦏", "level": 3, "mode": "animal" },
+  { "word": "hippo",  "emoji": "🦛", "level": 3, "mode": "animal" },
+  { "word": "camel",  "emoji": "🐪", "level": 3, "mode": "animal" },
+  { "word": "llama",  "emoji": "🦙", "level": 3, "mode": "animal" },
+  { "word": "sloth",  "emoji": "🦥", "level": 3, "mode": "animal" },
+  { "word": "otter",  "emoji": "🦦", "level": 3, "mode": "animal" },
+  { "word": "skunk",  "emoji": "🦨", "level": 3, "mode": "animal" },
+  { "word": "squid",  "emoji": "🦑", "level": 3, "mode": "animal" },
+  { "word": "snail",  "emoji": "🐌", "level": 3, "mode": "animal" },
+  { "word": "bison",  "emoji": "🦬", "level": 3, "mode": "animal" },
+  { "word": "moose",  "emoji": "🫎", "level": 3, "mode": "animal" },
+  { "word": "chick",  "emoji": "🐤", "level": 3, "mode": "animal" },
+
+  { "word": "rabbit",   "emoji": "🐰", "level": 4, "mode": "animal" },
+  { "word": "monkey",   "emoji": "🐵", "level": 4, "mode": "animal" },
+  { "word": "turtle",   "emoji": "🐢", "level": 4, "mode": "animal" },
+  { "word": "parrot",   "emoji": "🦜", "level": 4, "mode": "animal" },
+  { "word": "dragon",   "emoji": "🐉", "level": 4, "mode": "animal" },
+  { "word": "shrimp",   "emoji": "🦐", "level": 4, "mode": "animal" },
+  { "word": "beaver",   "emoji": "🦫", "level": 4, "mode": "animal" },
+  { "word": "spider",   "emoji": "🕷️",  "level": 4, "mode": "animal" },
+  { "word": "chicken",  "emoji": "🐔", "level": 4, "mode": "animal" },
+  { "word": "octopus",  "emoji": "🐙", "level": 4, "mode": "animal" },
+  { "word": "giraffe",  "emoji": "🦒", "level": 4, "mode": "animal" },
+  { "word": "raccoon",  "emoji": "🦝", "level": 4, "mode": "animal" },
+  { "word": "gorilla",  "emoji": "🦍", "level": 4, "mode": "animal" },
+  { "word": "penguin",  "emoji": "🐧", "level": 4, "mode": "animal" },
+  { "word": "lobster",  "emoji": "🦞", "level": 4, "mode": "animal" },
+  { "word": "ladybug",  "emoji": "🐞", "level": 4, "mode": "animal" },
+  { "word": "dolphin",  "emoji": "🐬", "level": 4, "mode": "animal" },
+  { "word": "beetle",   "emoji": "🪲", "level": 4, "mode": "animal" },
+  { "word": "badger",   "emoji": "🦡", "level": 4, "mode": "animal" },
+  { "word": "lizard",   "emoji": "🦎", "level": 4, "mode": "animal" },
+  { "word": "turkey",   "emoji": "🦃", "level": 4, "mode": "animal" },
+  { "word": "poodle",   "emoji": "🐩", "level": 4, "mode": "animal" },
+
+  { "word": "elephant",  "emoji": "🐘", "level": 5, "mode": "animal" },
+  { "word": "kangaroo",  "emoji": "🦘", "level": 5, "mode": "animal" },
+  { "word": "flamingo",  "emoji": "🦩", "level": 5, "mode": "animal" },
+  { "word": "blowfish",  "emoji": "🐡", "level": 5, "mode": "animal" },
+  { "word": "scorpion",  "emoji": "🦂", "level": 5, "mode": "animal" },
+  { "word": "hedgehog",  "emoji": "🦔", "level": 5, "mode": "animal" },
+  { "word": "butterfly", "emoji": "🦋", "level": 5, "mode": "animal" },
+  { "word": "dinosaur",  "emoji": "🦖", "level": 5, "mode": "animal" },
+  { "word": "mosquito",  "emoji": "🦟", "level": 5, "mode": "animal" },
+  { "word": "squirrel",  "emoji": "🐿️",  "level": 5, "mode": "animal" },
+  { "word": "jellyfish", "emoji": "🪼", "level": 5, "mode": "animal" },
+
+  { "word": "pea",  "emoji": "🫛", "level": 1, "mode": "food" },
+  { "word": "yam",  "emoji": "🍠", "level": 1, "mode": "food" },
+  { "word": "jam",  "emoji": "🍯", "level": 1, "mode": "food" },
+  { "word": "pie",  "emoji": "🥧", "level": 1, "mode": "food" },
+  { "word": "bun",  "emoji": "🥯", "level": 1, "mode": "food" },
+  { "word": "nut",  "emoji": "🥜", "level": 1, "mode": "food" },
+  { "word": "egg",  "emoji": "🥚", "level": 1, "mode": "food" },
+  { "word": "ham",  "emoji": "🍖", "level": 1, "mode": "food" },
+  { "word": "oat",  "emoji": "🌾", "level": 1, "mode": "food" },
+
+  { "word": "pear", "emoji": "🍐", "level": 2, "mode": "food" },
+  { "word": "corn", "emoji": "🌽", "level": 2, "mode": "food" },
+  { "word": "bean", "emoji": "🫘", "level": 2, "mode": "food" },
+  { "word": "cake", "emoji": "🎂", "level": 2, "mode": "food" },
+  { "word": "rice", "emoji": "🍚", "level": 2, "mode": "food" },
+  { "word": "milk", "emoji": "🥛", "level": 2, "mode": "food" },
+  { "word": "kiwi", "emoji": "🥝", "level": 2, "mode": "food" },
+  { "word": "taco", "emoji": "🌮", "level": 2, "mode": "food" },
+  { "word": "soup", "emoji": "🍲", "level": 2, "mode": "food" },
+
+  { "word": "apple", "emoji": "🍎", "level": 3, "mode": "food" },
+  { "word": "grape", "emoji": "🍇", "level": 3, "mode": "food" },
+  { "word": "melon", "emoji": "🍈", "level": 3, "mode": "food" },
+  { "word": "mango", "emoji": "🥭", "level": 3, "mode": "food" },
+  { "word": "lemon", "emoji": "🍋", "level": 3, "mode": "food" },
+  { "word": "peach", "emoji": "🍑", "level": 3, "mode": "food" },
+  { "word": "pizza", "emoji": "🍕", "level": 3, "mode": "food" },
+  { "word": "bread", "emoji": "🍞", "level": 3, "mode": "food" },
+  { "word": "pasta", "emoji": "🍝", "level": 3, "mode": "food" },
+  { "word": "sushi", "emoji": "🍣", "level": 3, "mode": "food" },
+  { "word": "onion", "emoji": "🧅", "level": 3, "mode": "food" },
+  { "word": "olive", "emoji": "🫒", "level": 3, "mode": "food" },
+
+  { "word": "orange",  "emoji": "🍊", "level": 4, "mode": "food" },
+  { "word": "banana",  "emoji": "🍌", "level": 4, "mode": "food" },
+  { "word": "cherry",  "emoji": "🍒", "level": 4, "mode": "food" },
+  { "word": "tomato",  "emoji": "🍅", "level": 4, "mode": "food" },
+  { "word": "waffle",  "emoji": "🧇", "level": 4, "mode": "food" },
+  { "word": "muffin",  "emoji": "🧁", "level": 4, "mode": "food" },
+  { "word": "noodle",  "emoji": "🍜", "level": 4, "mode": "food" },
+  { "word": "butter",  "emoji": "🧈", "level": 4, "mode": "food" },
+  { "word": "almond",  "emoji": "🌰", "level": 4, "mode": "food" },
+  { "word": "peanut",  "emoji": "🥜", "level": 4, "mode": "food" },
+  { "word": "coffee",  "emoji": "☕", "level": 4, "mode": "food" },
+  { "word": "yogurt",  "emoji": "🥣", "level": 4, "mode": "food" },
+  { "word": "pretzel", "emoji": "🥨", "level": 4, "mode": "food" },
+  { "word": "avocado", "emoji": "🥑", "level": 4, "mode": "food" },
+  { "word": "popcorn", "emoji": "🍿", "level": 4, "mode": "food" },
+
+  { "word": "broccoli",   "emoji": "🥦", "level": 5, "mode": "food" },
+  { "word": "eggplant",   "emoji": "🍆", "level": 5, "mode": "food" },
+  { "word": "mushroom",   "emoji": "🍄", "level": 5, "mode": "food" },
+  { "word": "lollipop",   "emoji": "🍭", "level": 5, "mode": "food" },
+  { "word": "blueberry",  "emoji": "🫐", "level": 5, "mode": "food" },
+  { "word": "pineapple",  "emoji": "🍍", "level": 5, "mode": "food" },
+  { "word": "watermelon", "emoji": "🍉", "level": 5, "mode": "food" },
+  { "word": "strawberry", "emoji": "🍓", "level": 5, "mode": "food" },
+  { "word": "chocolate",  "emoji": "🍫", "level": 5, "mode": "food" },
+  { "word": "croissant",  "emoji": "🥐", "level": 5, "mode": "food" },
+
+  { "word": "run", "emoji": "🏃", "level": 1, "mode": "sport" },
+  { "word": "ski", "emoji": "⛷️",  "level": 1, "mode": "sport" },
+  { "word": "row", "emoji": "🚣", "level": 1, "mode": "sport" },
+  { "word": "box", "emoji": "🥊", "level": 1, "mode": "sport" },
+  { "word": "hop", "emoji": "🤸", "level": 1, "mode": "sport" },
+  { "word": "hit", "emoji": "🎯", "level": 1, "mode": "sport" },
+  { "word": "bow", "emoji": "🏹", "level": 1, "mode": "sport" },
+
+  { "word": "jump", "emoji": "🤸", "level": 2, "mode": "sport" },
+  { "word": "swim", "emoji": "🏊", "level": 2, "mode": "sport" },
+  { "word": "walk", "emoji": "🚶", "level": 2, "mode": "sport" },
+  { "word": "yoga", "emoji": "🧘", "level": 2, "mode": "sport" },
+  { "word": "golf", "emoji": "⛳", "level": 2, "mode": "sport" },
+  { "word": "surf", "emoji": "🏄", "level": 2, "mode": "sport" },
+  { "word": "bike", "emoji": "🚴", "level": 2, "mode": "sport" },
+  { "word": "dive", "emoji": "🤿", "level": 2, "mode": "sport" },
+  { "word": "race", "emoji": "🏎️",  "level": 2, "mode": "sport" },
+
+  { "word": "dance", "emoji": "💃", "level": 3, "mode": "sport" },
+  { "word": "climb", "emoji": "🧗", "level": 3, "mode": "sport" },
+  { "word": "skate", "emoji": "⛸️",  "level": 3, "mode": "sport" },
+  { "word": "shoot", "emoji": "🏹", "level": 3, "mode": "sport" },
+  { "word": "throw", "emoji": "🥏", "level": 3, "mode": "sport" },
+  { "word": "catch", "emoji": "⚾", "level": 3, "mode": "sport" },
+  { "word": "rugby", "emoji": "🏉", "level": 3, "mode": "sport" },
+  { "word": "chess", "emoji": "♟️",  "level": 3, "mode": "sport" },
+  { "word": "train", "emoji": "🏋️",  "level": 3, "mode": "sport" },
+  { "word": "kayak", "emoji": "🛶", "level": 3, "mode": "sport" },
+  { "word": "cycle", "emoji": "🚴", "level": 3, "mode": "sport" },
+  { "word": "cheer", "emoji": "📣", "level": 3, "mode": "sport" },
+  { "word": "match", "emoji": "⚽", "level": 3, "mode": "sport" },
+
+  { "word": "tennis",  "emoji": "🎾", "level": 4, "mode": "sport" },
+  { "word": "soccer",  "emoji": "⚽", "level": 4, "mode": "sport" },
+  { "word": "hockey",  "emoji": "🏒", "level": 4, "mode": "sport" },
+  { "word": "karate",  "emoji": "🥋", "level": 4, "mode": "sport" },
+  { "word": "rowing",  "emoji": "🚣", "level": 4, "mode": "sport" },
+  { "word": "boxing",  "emoji": "🥊", "level": 4, "mode": "sport" },
+  { "word": "sprint",  "emoji": "🏃", "level": 4, "mode": "sport" },
+  { "word": "archery", "emoji": "🏹", "level": 4, "mode": "sport" },
+  { "word": "fencing", "emoji": "🤺", "level": 4, "mode": "sport" },
+  { "word": "fishing", "emoji": "🎣", "level": 4, "mode": "sport" },
+  { "word": "bowling", "emoji": "🎳", "level": 4, "mode": "sport" },
+  { "word": "surfing", "emoji": "🏄", "level": 4, "mode": "sport" },
+  { "word": "cycling", "emoji": "🚴", "level": 4, "mode": "sport" },
+
+  { "word": "swimming",   "emoji": "🏊", "level": 5, "mode": "sport" },
+  { "word": "climbing",   "emoji": "🧗", "level": 5, "mode": "sport" },
+  { "word": "marathon",   "emoji": "🏃", "level": 5, "mode": "sport" },
+  { "word": "baseball",   "emoji": "⚾", "level": 5, "mode": "sport" },
+  { "word": "football",   "emoji": "🏈", "level": 5, "mode": "sport" },
+  { "word": "handball",   "emoji": "🤾", "level": 5, "mode": "sport" },
+  { "word": "triathlon",  "emoji": "🏅", "level": 5, "mode": "sport" },
+  { "word": "snowboard",  "emoji": "🏂", "level": 5, "mode": "sport" },
+  { "word": "badminton",  "emoji": "🏸", "level": 5, "mode": "sport" },
+  { "word": "wrestling",  "emoji": "🤼", "level": 5, "mode": "sport" },
+  { "word": "skateboard", "emoji": "🛹", "level": 5, "mode": "sport" },
+  { "word": "volleyball", "emoji": "🏐", "level": 5, "mode": "sport" },
+  { "word": "basketball", "emoji": "🏀", "level": 5, "mode": "sport" },
+  { "word": "gymnastics", "emoji": "🤸", "level": 5, "mode": "sport" }
 ]
