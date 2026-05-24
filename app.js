@@ -21,6 +21,7 @@ const modeMeta = {
   animal: { label: '🦁 Animals',            searchTag: 'animal',   imgText: '🔍 See pictures of this animal'   },
   food:   { label: '🍎 Fruits & Food',       searchTag: 'food',     imgText: '🔍 See pictures of this food'     },
   sport:  { label: '⚽ Activities & Sports', searchTag: 'activity', imgText: '🔍 See pictures of this activity' },
+  flag:   { label: '🌍 Flags & Countries',   searchTag: 'flag',     imgText: '🔍 See the flag of this country'  },
 };
 
 // --- State ---
