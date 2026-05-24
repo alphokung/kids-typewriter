@@ -17,25 +17,41 @@ const levelMeta = [
   { label: "Level 5", desc: "8+ letter words",  stars: "⭐⭐⭐⭐⭐", color: "bg-purple-300", text: "text-purple-700" },
 ];
 
+const modeMeta = {
+  animal: { label: '🦁 Animals',            searchTag: 'animal',   imgText: '🔍 See pictures of this animal'   },
+  food:   { label: '🍎 Fruits & Food',       searchTag: 'food',     imgText: '🔍 See pictures of this food'     },
+  sport:  { label: '⚽ Activities & Sports', searchTag: 'activity', imgText: '🔍 See pictures of this activity' },
+};
+
 // --- State ---
 let wordPool = [];
 let currentWordObj = null;
 let typedIndex = 0;
 let score = parseInt(sessionStorage.getItem('score') || '0', 10);
 let selectedLevel = 1;
+let selectedMode = '';
 
 // --- DOM Elements ---
-const startScreen   = document.getElementById('start-screen');
-const gameContainer = document.getElementById('game-container');
-const emojiDisplay  = document.getElementById('emoji-display');
-const wordDisplay   = document.getElementById('word-display');
-const hintDots      = document.getElementById('hint-dots');
-const scoreDisplay  = document.getElementById('score');
-const hiddenInput   = document.getElementById('hidden-input');
-const congratsText  = document.getElementById('congrats-text');
-const levelBadge    = document.getElementById('level-badge');
-const backBtn       = document.getElementById('back-btn');
-const googleImgLink = document.getElementById('google-img-link');
+const startScreen      = document.getElementById('start-screen');
+const gameContainer    = document.getElementById('game-container');
+const emojiDisplay     = document.getElementById('emoji-display');
+const wordDisplay      = document.getElementById('word-display');
+const hintDots         = document.getElementById('hint-dots');
+const scoreDisplay     = document.getElementById('score');
+const hiddenInput      = document.getElementById('hidden-input');
+const congratsText     = document.getElementById('congrats-text');
+const levelBadge       = document.getElementById('level-badge');
+const backBtn          = document.getElementById('back-btn');
+const googleImgLink    = document.getElementById('google-img-link');
+const modePanel        = document.getElementById('mode-panel');
+const levelPanel       = document.getElementById('level-panel');
+const backToModesBtn   = document.getElementById('back-to-modes-btn');
+const modeLabelDisplay = document.getElementById('mode-label-display');
+const vocabScreen      = document.getElementById('vocab-screen');
+const vocabContent     = document.getElementById('vocab-content');
+const vocabModeLabel   = document.getElementById('vocab-mode-label');
+const viewVocabBtn     = document.getElementById('view-vocab-btn');
+const backFromVocabBtn = document.getElementById('back-from-vocab-btn');
 
 // --- Boot ---
 fetch('words.json')
@@ -123,21 +139,89 @@ function init() {
     window.speechSynthesis.cancel();
     currentWordObj = null;
     gameContainer.classList.add('opacity-0', 'pointer-events-none');
+    vocabScreen.style.display = 'none';
     startScreen.style.display = '';
-    // tiny delay so display:'' takes effect before fade-in
+    modePanel.style.display = '';
+    levelPanel.style.display = 'none';
     setTimeout(() => startScreen.classList.remove('opacity-0'), 20);
   }
 
   // --- Back Button ---
   backBtn.addEventListener('click', goToStartScreen);
 
+  // --- Mode Selection ---
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedMode = btn.dataset.mode;
+      modeLabelDisplay.textContent = modeMeta[selectedMode].label;
+      modePanel.style.display = 'none';
+      levelPanel.style.display = '';
+    });
+  });
+
+  backToModesBtn.addEventListener('click', () => {
+    levelPanel.style.display = 'none';
+    modePanel.style.display = '';
+  });
+
+  // --- Vocab Screen ---
+  function openVocabScreen() {
+    vocabModeLabel.textContent = modeMeta[selectedMode].label;
+    vocabContent.innerHTML = '';
+
+    [1, 2, 3, 4, 5].forEach(level => {
+      const words = masterWordList.filter(w => w.mode === selectedMode && w.level === level);
+      if (!words.length) return;
+
+      const section = document.createElement('div');
+      section.className = 'mb-8';
+
+      const header = document.createElement('div');
+      header.className = 'flex items-center gap-2 mb-3 mt-4';
+      header.innerHTML = `<span class="text-base">${levelMeta[level - 1].stars}</span><span class="text-sm font-bold text-gray-500 uppercase tracking-wider">${levelMeta[level - 1].label} · ${levelMeta[level - 1].desc}</span>`;
+      section.appendChild(header);
+
+      const grid = document.createElement('div');
+      grid.className = 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3';
+
+      words.forEach(w => {
+        const card = document.createElement('button');
+        card.className = 'flex flex-col items-center bg-white rounded-2xl py-4 px-2 shadow-sm cursor-pointer hover:shadow-md hover:scale-105 transition-all active:scale-95';
+        card.innerHTML = `<span class="text-4xl mb-2 leading-none">${w.emoji}</span><span class="text-xs font-bold uppercase tracking-wide text-gray-600">${w.word}</span>`;
+        card.addEventListener('click', () => speak(w.word));
+        grid.appendChild(card);
+      });
+
+      section.appendChild(grid);
+      vocabContent.appendChild(section);
+    });
+
+    startScreen.style.display = 'none';
+    vocabScreen.style.display = '';
+    vocabScreen.scrollTop = 0;
+  }
+
+  viewVocabBtn.addEventListener('click', openVocabScreen);
+
+  backFromVocabBtn.addEventListener('click', () => {
+    vocabScreen.style.display = 'none';
+    startScreen.style.display = '';
+  });
+
   // --- Level Management ---
   function startLevel(level) {
     selectedLevel = level;
-    wordPool = masterWordList
-      .filter(w => w.level === level)
-      .sort(() => Math.random() - 0.5);
-    levelBadge.textContent = levelMeta[level - 1].label;
+    if (level === 0) {
+      wordPool = masterWordList
+        .filter(w => w.mode === selectedMode)
+        .sort(() => Math.random() - 0.5);
+      levelBadge.textContent = '🎲 Random';
+    } else {
+      wordPool = masterWordList
+        .filter(w => w.mode === selectedMode && w.level === level)
+        .sort(() => Math.random() - 0.5);
+      levelBadge.textContent = levelMeta[level - 1].label;
+    }
     scoreDisplay.textContent = score;
   }
 
@@ -150,13 +234,13 @@ function init() {
     setTimeout(() => confetti({ particleCount: 120, spread: 120, origin: { x: 0.2, y: 0.5 }, colors }), 350);
     setTimeout(() => confetti({ particleCount: 120, spread: 120, origin: { x: 0.8, y: 0.5 }, colors }), 700);
 
-    if (selectedLevel >= 5) {
-      // All levels finished
+    if (selectedLevel === 0 || selectedLevel >= 5) {
+      // Random mode or all levels finished
       congratsText.textContent = '🏆 Champion!';
       congratsText.classList.remove('opacity-0', 'scale-50', 'congrats-pop');
       void congratsText.offsetWidth;
       congratsText.classList.add('congrats-pop');
-      speak('Amazing! You finished all levels! You are a spelling champion!', () => {
+      speak('Amazing! You finished all the words! You are a spelling champion!', () => {
         setTimeout(goToStartScreen, 1500);
       });
     } else {
@@ -227,7 +311,9 @@ function init() {
     }
 
     // Update Google Image search link
-    googleImgLink.href = `https://www.google.com/search?q=${encodeURIComponent(currentWordObj.word)}+animal&tbm=isch`;
+    const meta = modeMeta[selectedMode] || modeMeta.animal;
+    googleImgLink.href = `https://www.google.com/search?q=${encodeURIComponent(currentWordObj.word)}+${meta.searchTag}&tbm=isch`;
+    googleImgLink.textContent = meta.imgText;
 
     speak(currentWordObj.word);
   }
